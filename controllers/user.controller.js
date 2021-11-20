@@ -21,7 +21,7 @@ module.exports.updateUser = async (req, res) => {
     return res.status(400).send("ID unknown : " + req.params.id);
 
   try {
-    await UserModel.updateOne(
+    await UserModel.findOneAndUpdate(
       { _id: req.params.id },
       {
         $set: {
